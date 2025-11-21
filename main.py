@@ -1,9 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 
 app = FastAPI()
+        
 
 @app.post("/short_url")
-async def generate_short_url():
+async def generate_short_url(
+    long_url: str = Body(embed=True)
+):
     return ...
 
 
